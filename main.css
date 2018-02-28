@@ -11,7 +11,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  height: 100vh;
+  height: 200px;
 }
 h1 a {
   color: #1C1C1C;
