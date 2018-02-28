@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url('https://i.imgur.com/EfCoFf0.jpg') center center no-repeat fixed;
+  background-size: cover;
+  font-family: 'Comfortaa', 'Helvetica', 'Arial', cursive;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  height: 100vh;
+}
+h1 a {
+  color: #1C1C1C;
+  text-decoration: none;
+}
+h1 {
+  font-size: 2.25em;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+h1:hover {
+  transform: scale(1.1);
+}
+a:hover {
+  color: #5D126F;
+}
+header button {
+  background-color: #D11919;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black inset;
+  transition: all 0.2s;
+}
+header button:hover {
+  cursor: pointer;
+  background-color: #E31B1B;
+  transform: scale(1.05);
+}
