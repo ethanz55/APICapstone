@@ -16,27 +16,50 @@
 <body>
   <header>
     <h1><a href="#" class="titleLink">Never Starvin'</a></h1>
-    <button type="button">Find Yummies Near Me!</button>
+    <p class="slogan">Restaurants near you! Stay full!</p>
+    <button type="button" class="js-button">Go!</button>
   </header>
+  <!--<header id="headerr">
+    <h1><a href="#" class="titleLink">Never Starvin'</a></h1>
+    <form>
+      <label for="search">City Name</label>
+      <input type="text" id="search" class="search" placeholder="eg. Los Angeles">
+      <button type="button" class="js-button">Go!</button>
+    </form>
+  </header>-->
   <!--  <header class="clickHeader">
     <h1><a href="#" class="titleLink">Never Starvin'</a></h1>
     <button type="button" class="clickButton">Find Yummies Near Me!</button>
   </header>-->
 
   <main>
-    <!--><section class="resultsContainer">
-      <img src="http://via.placeholder.com/200x200">
+    <section class="resultsContainer">
+      <img src="http://via.placeholder.com/312x200" class="thumnailSize">
       <ul>
         <li>
-          <h2><a href="#" class="whiteFont">Normon's Yummies</a></h2>
+          <h2><a href="#">Normon's Yummies</a></h2>
         </li>
-        <li>600 N. Baldwin Ave.</li>
+        <li>Cafe</li>
+        <li>3.7/5 stars &#8226; 1046 votes</li>
+        <li>600 N. Baldwin Ave</li>
         <li>Arcadia, CA 91007</li>
-        <li>626-696-9696</li>
-        <li id="distanceStyle">2.62 miles away</li>
+        <li>(212) 228-2930</li>
+      </ul>
+    </section>
+    <!--<section class="resultsContainer">
+      <img src="${restaurants.thumb}" class="thumbnailSize">
+      <ul>
+        <li>
+          <h2><a href="#">${restaurants.name}</a></h2>
+        </li>
+        <li>${restaurants.cuisines}</li>
+        <li>${restaurants.user_rating.aggregate_rating}/5 stars &#8226; ${restaurants.user_rating.votes} votes</li>
+        <li>${restaurants.location.address}</li>
+        <li>${restaurants.location.city} ${restaurants.location.zipcode}</li>
+        <li>${restaurants.phone_numbers}</li>
       </ul>
     </section>-->
-    
+
   </main>
 </body>
 
