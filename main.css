@@ -3,6 +3,7 @@
 }
 body {
   background: url('https://i.imgur.com/sYSGIiO.jpg') center center no-repeat fixed;
+  background-color: #00CED1;
   background-size: cover;
   font-family: 'Comfortaa', 'Helvetica', 'Arial', cursive;
 }
@@ -26,12 +27,14 @@ h1 {
   transform: scale(1.2);
   margin-top: 0;
   margin-bottom: 0;
+  cursor: none;
 }
 h1:hover {
   transform: scale(1.3);
 }
 .titleLink:hover {
   color: #FFF;
+  cursor: default;
 }
 .slogan {
   display: none;
@@ -88,17 +91,20 @@ main {
   background-color: #FFF;
 }
 .thumbnailSize {
-  width: 312px;
+  width: 310px;
   height: 200px;
 }
 ul {
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  list-style: none;
+  list-style-type: circle;
   width: 310px;
   background-color: white;
   line-height: 26px;
+}
+#no-list {
+  list-style: none !important;
 }
 h2 {
   margin: 0;
