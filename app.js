@@ -14,16 +14,16 @@ function getDataFromApi(searchTerm, callback) {
   console.log(zomatoEndpoint + '?lat=' + query.lat + '&lon=' + query.lon);
 }
 
+//    streetAddress = $(data.nearby_restaurants.restaurant.location.address).text().split(",");
+//    console.log(streetAddress);
 
 function displayZomatoResults(data) {
+  let streetAddress = null;
   const display = data.nearby_restaurants.map((item,index) => {
     const rest = item.restaurant;
-    // <h1>${rest.name}</h1>
-    // let streetAddress = ${rest.location.address}.split(" ");
-    // console.log(streetAddress);
     return `
         <section class="resultsContainer">
-          <img src="https://aquaair-wetdry.com/wp-content/uploads/CroppedImage1600900-restaurant-alpenhof-zermatt.jpg" class="thumbnailSize" alt="picture of the restaurant">
+          <img onload="spinnerStop()" src="https://aquaair-wetdry.com/wp-content/uploads/CroppedImage1600900-restaurant-alpenhof-zermatt.jpg" class="thumbnailSize" alt="picture of the restaurant">
           <ul>
             <li class="no-list">
               <h2><a href="${rest.url}" target="_blank">${rest.name}</a></h2>
@@ -38,22 +38,28 @@ function displayZomatoResults(data) {
         </section>
     `;
   });
-  // split address at comma
   console.log(data);
   
   $('main').html(display);
 }
 
+function spinnerStop() {
+  $('aside').addClass('displayed');
+}
 
+function addClasses() {
+  $('header').addClass('clickHeader');
+  $('.js-button').addClass('clickButton');
+  $('.slogan').css('display', 'block');
+  $('.titleLink').css('cursor', 'pointer');
+  $('aside').removeClass('displayed');
+}
 
 function eventListeners() {
   $('.js-button').on('click', function(event) {
     var snd = new Audio("buttonPress.mp3");
     snd.play();
-    $('header').addClass('clickHeader');
-    $('.js-button').addClass('clickButton');
-    $('.slogan').css('display', 'block');
-    $('.titleLink').css('cursor', 'pointer');
+    addClasses();
     geo = navigator.geolocation.getCurrentPosition(coords => getDataFromApi(coords, displayZomatoResults));
   });
     $('.titleLink').on('click', function(event){

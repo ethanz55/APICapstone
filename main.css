@@ -36,6 +36,7 @@ h1:hover, h1:focus,
   cursor: default;
 }
 .slogan {
+  text-align: center;
   display: none;
   font-size: 18px;
   font-weight: 500;
