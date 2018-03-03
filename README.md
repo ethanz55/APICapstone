@@ -13,7 +13,31 @@ branches.
 I wanted to create restaurant locator app that did not require the user to bother
 with typing in their address.
 
-### Important Note
+## Screenshots
+Home Page:
+
+
+![home page screenshot](https://i.imgur.com/0jIaevn.jpg "Desktop Main Page")
+
+
+Loading Page:
+
+
+![loading page screenshot](https://i.imgur.com/CNNCjef.jpg "Desktop Loading Page")
+
+
+Main Page:
+
+
+![main page screenshot](https://i.imgur.com/i0D3Bt9.jpg "Desktop Main Page")
+
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
+* jQuery
+
+## Important Note
 
 The images are preset because Zomato requires a partnership with them
 in order to access their photos. The phone number also requires a partnership
