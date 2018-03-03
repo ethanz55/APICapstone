@@ -87,6 +87,7 @@ main {
 }
 .resultsContainer {
   width: 325px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   margin-left: 10px;
@@ -97,6 +98,7 @@ main {
 .thumbnailSize {
   width: 323px;
   height: 200px;
+  border-bottom: 1px solid black;
 }
 ul {
   margin: 0;
