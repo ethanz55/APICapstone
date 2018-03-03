@@ -49,7 +49,9 @@ header button {
   width: 200px;
   padding: 10px;
   border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 5px black inset;
   box-shadow: 1px 1px 5px black inset;
+  border: 1px solid black;
   transition: all 0.2s;
   margin-top: 0.67em;
 }
@@ -84,7 +86,7 @@ main {
   margin-right: auto;
 }
 .resultsContainer {
-  width: 312px;
+  width: 325px;
   display: flex;
   flex-direction: column;
   margin-left: 10px;
@@ -94,7 +96,7 @@ main {
   background-color: #F7F7F7;
 }
 .thumbnailSize {
-  width: 310px;
+  width: 323px;
   height: 200px;
 }
 ul {
@@ -117,7 +119,7 @@ h2 a {
   font-size: 20px;
 }
 h2:hover, h2:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
   color: #08069E;
 }
 

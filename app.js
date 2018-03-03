@@ -70,8 +70,6 @@ function displayZomatoResults(data) {
         </section>
     `;
   });
-  console.log(data);
-  
   $('main').html(display);
 }
 
