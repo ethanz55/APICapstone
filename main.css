@@ -125,6 +125,10 @@ h2 a:focus {
   color: #08069E;
   outline: 3px #08069E dotted;
 }
+.nA {
+  color: grey;
+}
+
 
 @media screen and (max-width: 330px) {
   h1 {
