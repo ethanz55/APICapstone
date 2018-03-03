@@ -95,7 +95,13 @@ function eventListeners() {
     snd.play();
     addClasses();
     geo = navigator.geolocation.getCurrentPosition(coords => getDataFromApi(coords).then(displayZomatoResults));
-
+    // prompt user to turn on location settings
+    const checkError = error => {
+      if (error.code == error.PERMISSION_DENIED) {
+        $('h3').removeClass('displayed');
+      }
+    }
+    $(checkError);
   });
     $('.titleLink').on('click', function(event){
     location.reload();

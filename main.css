@@ -129,6 +129,19 @@ h2 a:focus {
 .nA {
   color: grey;
 }
+.flexed {
+  display: flex;
+  flex-direction: column;
+}
+.errored {
+  background-color: white;
+  max-width: 320px;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  color: red;
+  font-weight: 900;
+}
 
 
 @media screen and (max-width: 330px) {
