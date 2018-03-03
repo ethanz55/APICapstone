@@ -31,9 +31,10 @@ function getDataFromApi(searchTerm) {
 
 function displayZomatoResults(data) {
   const display = data.map((item,index) => {
+    
+    // just in case database doesn't have available data
     let average_cost = item.average_cost_for_two;
     let displayAverage;
-
     if (average_cost == 0) {
       displayAverage = `<span class="nA">No Info Available</span>`;
     }
@@ -73,6 +74,7 @@ function displayZomatoResults(data) {
   $('main').html(display);
 }
 
+// function for my onload in html
 function spinnerStop() {
   $('aside').addClass('displayed');
   let snd2 = new Audio("finishLoad.mp3");

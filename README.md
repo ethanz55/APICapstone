@@ -8,7 +8,12 @@ city. Specifically created with the
 [/restaurant](https://developers.zomato.com/documentation#!/restaurant/restaurant_0)
 branches.
 
-## Important Note
+## Motivation
+
+I wanted to create restaurant locator app that did not require the user to bother
+with typing in their address.
+
+### Important Note
 
 The images are preset because Zomato requires a partnership with them
 in order to access their photos. The phone number also requires a partnership
