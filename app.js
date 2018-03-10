@@ -109,7 +109,6 @@ function displayZomatoResults(data) {
 // function for my onload in html
 function spinnerStop() {
   $('aside').addClass('displayed');
-  $('form').addClass('displayed');
   let snd2 = new Audio("finishLoad.mp3");
   snd2.play();
 }
@@ -143,6 +142,8 @@ function eventListeners() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     const city = $('#error-search').val();
+    $('form').addClass('displayed');
+    $('aside').removeClass('displayed');
     getDatafromGoogleApi(city).then(displayZomatoResults);
   });
 }
