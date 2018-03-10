@@ -61,12 +61,8 @@ header button:focus {
   background-color: #F32525;
   transform: scale(1.05);
 }
-form {
-  display: flex;
-  flex-flow: column;
-}
-form input {
-  padding: 10px;
+header button:active {
+  background-color: #FF4E01;
 }
 .clickHeader {
   height: 140px;
@@ -131,10 +127,6 @@ h2 a:focus {
 .nA {
   color: grey;
 }
-.flexed {
-  display: flex;
-  flex-direction: column;
-}
 .errored {
   background-color: white;
   max-width: 320px;
@@ -143,6 +135,46 @@ h2 a:focus {
   text-transform: uppercase;
   color: red;
   font-weight: 900;
+}
+
+form {
+  margin: 10px auto;
+}
+form label {
+  margin-bottom: 10px;
+}
+form input {
+  border: 1px solid black;
+  padding: 10px;
+  width: 260px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+form button {
+  border: 1px solid black;
+  background-color: #7CA843;
+  color: white;
+  padding: 10px;
+  width: 260px;
+}
+form button:hover,
+form button:focus {
+  background-color: #9DD555;
+  cursor: pointer;
+}
+
+.errorDisplay {
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
+}
+
+.errorDisplay p {
+  background-color: #F8F8F8;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 

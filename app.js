@@ -1,5 +1,7 @@
 const zomatoEndpoint = 'https://developers.zomato.com/api/v2.1/geocode';
-const restaurantEndpoint = 'https://developers.zomato.com/api/v2.1/restaurant?res_id='
+const restaurantEndpoint = 'https://developers.zomato.com/api/v2.1/restaurant?res_id=';
+const googleEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?';
+
 // zomato required partenership in order to access images so I had to use random pictures
 // also would have added a phone number if zomato had it available to the public
 const imgArray = [
@@ -16,18 +18,46 @@ const imgArray = [
 
 
 
-function getDataFromApi(searchTerm) {
-  const query = {
-    lat: searchTerm.coords.latitude,
-    lon: searchTerm.coords.longitude
-  }
+function onError() {
+  $('body').html(`
+    <div class="errorDisplay">
+      <p>Oops! Something went wrong! Please refresh the browser and try again!</p>
+    </div>
+  `);
+  console.log('Error');
+}
 
+
+
+function getDatafromGoogleApi(userAddress) {
+  const query = {
+    address: `${userAddress}`,
+    key: 'AIzaSyDhy5gs8dLDbshDik4WtSUZe1nC-3ACffM'
+  };
+  return fetch(googleEndpoint + 'address=' + query.address + '&key=' + query.key)
+    .then(res => res.json())
+    .then(data => data.results[0].geometry.location)
+    .then(data => ({coords: {latitude: data.lat, longitude: data.lng}}))
+    .then(getDataFromApi)
+    .catch(onError);
+}
+
+
+
+function getDataFromApi(locate) {
+  const query = {
+    lat: locate.coords.latitude,
+    lon: locate.coords.longitude
+  }
   return fetch(zomatoEndpoint + '?lat=' + query.lat + '&lon=' + query.lon, { headers: {'user-key': '79f6bb0db344b1df724ab923597bc410'} })
     .then(res => res.json())
     .then(data => Promise.all(data.nearby_restaurants.map(res => 
       fetch(restaurantEndpoint + res.restaurant.id, { headers: {'user-key': '79f6bb0db344b1df724ab923597bc410'} }))))
-    .then(responses => Promise.all(responses.map(res => res.json())));
+    .then(responses => Promise.all(responses.map(res => res.json())))
+    .catch(onError);
 }
+
+
 
 function displayZomatoResults(data) {
   const display = data.map((item,index) => {
@@ -74,9 +104,12 @@ function displayZomatoResults(data) {
   $('main').html(display);
 }
 
+
+
 // function for my onload in html
 function spinnerStop() {
   $('aside').addClass('displayed');
+  $('form').addClass('displayed');
   let snd2 = new Audio("finishLoad.mp3");
   snd2.play();
 }
@@ -98,11 +131,19 @@ function eventListeners() {
       coords => getDataFromApi(coords).then(displayZomatoResults),
       function (error) {
         if (error.code == error.PERMISSION_DENIED)
-          $('h3').removeClass('displayed');
+          $('aside').addClass('displayed');
+          $('form').removeClass('displayed');
     });
   });
-    $('.titleLink').on('click', function(event){
+  
+  $('.titleLink').on('click', function(event) {
     location.reload();
+  });
+  
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    const city = $('#error-search').val();
+    getDatafromGoogleApi(city).then(displayZomatoResults);
   });
 }
 

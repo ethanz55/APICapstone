@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  
   <header role="banner">
     <h1 tabindex="0"><a class="titleLink">Never Starvin'</a></h1>
     <p class="slogan">Restaurants in your area! Stay full!</p>
@@ -28,8 +29,13 @@
         <div></div><div></div><div></div><div></div>
       </section>
     </section>
-    <h3 class="displayed errored">Please turn on location settings to continue</h3>
   </aside>
+  
+  <form class="errored displayed" role="form">
+    <label for="error-search">Please turn on location settings or enter your address to continue</label>
+    <input type="text" id="error-search" placeholder="300 Naomi, Hollywood, CA 90038" required>
+    <button type="submit">SUBMIT</button>
+  </form>
   
   <main role="main">
   </main>
